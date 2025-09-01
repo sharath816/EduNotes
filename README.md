@@ -158,7 +158,6 @@ notes-app/
 ├── backend/
 │   ├── app/
 │   │   ├── main.py
-│   │   ├── main.py
 │   │   ├── models.py
 │   │   ├── crud.py
 │   │   ├── auth.py
@@ -169,10 +168,15 @@ notes-app/
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
-│   │   │   │   ├── main.py
-
+│   │   │   ├── NoteForm.js
+│   │   ├── lib/
+│   │   │   ├── api.js
 │   │   ├── pages/
-│   │       ├── 
+│   │   │   ├── _app.js
+│   │   │   ├── _document.js
+│   │   │   ├── index.js
+│   │   │   ├── signin.js
+│   │   │   ├── signup.js
 │   ├── package.json
 │   └── Dockerfile
 ├── docker-compose.yml
