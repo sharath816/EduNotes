@@ -186,7 +186,6 @@ notes-app/
 ---
 
 ##  Future Improvements
-- Rich text editor for notes.
 - Tags & categories for better note organization.
 - Sharing notes with others in the same org (EdTech use case).
 
