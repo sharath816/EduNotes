@@ -41,8 +41,8 @@ The app is tailored for **EdTech firms** with features like JWT authentication, 
 - JWT Authentication
 - Uvicorn
 
-### Frontend (React + Vite)
-- React (Hooks, Context API)
+### Frontend 
+- NextJs 
 - Tailwind CSS
 - Axios
 
@@ -84,7 +84,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES=30
 ```bash
 cd backend
 python -m venv venv
-source venv/bin/activate   # On Windows: venv\Scripts\activate
+venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
