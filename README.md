@@ -158,17 +158,21 @@ notes-app/
 ├── backend/
 │   ├── app/
 │   │   ├── main.py
+│   │   ├── main.py
 │   │   ├── models.py
-│   │   ├── routes/
-│   │   └── auth/
+│   │   ├── crud.py
+│   │   ├── auth.py
+│   │   ├── database.py
+│   │   └── schemas.py
 │   ├── requirements.txt
 │   └── Dockerfile
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
+│   │   │   │   ├── main.py
+
 │   │   ├── pages/
-│   │   ├── App.jsx
-│   │   └── main.jsx
+│   │       ├── 
 │   ├── package.json
 │   └── Dockerfile
 ├── docker-compose.yml
