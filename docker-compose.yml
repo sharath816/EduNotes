@@ -1,0 +1,46 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: notes_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: notes_app
+      MYSQL_USER: notes_user
+      MYSQL_PASSWORD: notes_pass
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-prootpass"]
+      interval: 5s
+      retries: 5
+      start_period: 10s
+      timeout: 5s
+
+  backend:
+    build: ./backend
+    container_name: notes_backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    container_name: notes_frontend
+    restart: unless-stopped
+    env_file:
+      - ./frontend/.env.local
+    ports:
+      - "3001:3001"
+    depends_on:
+      - backend
+
+volumes:
+  db_data:
